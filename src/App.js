@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
@@ -10,13 +10,16 @@ import NotFound from './NotFound';
 
 function App() {
   return ( 
+    // Router surrounds entire application 
     <Router>
     <div className="App">
-      {/* Since Navbar is outside of the  Switch*/}
+      {/* Since Navbar is outside of the Switch it will show for every page */}
       <Navbar/>
       <div className="content">
-        {/* Switch component makes sure that only one route shows that only one time */}
-        <Switch>
+          {/* Switch component makes sure that only one route shows that only one time */}
+          {/* TODO update Switch to Routes component as of React Router v6  */}
+          <Switch>
+            {/* exact is needed because just / would also match all the other */}
           <Route exact path="/">
             <Home />
           </Route>
