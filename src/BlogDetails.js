@@ -6,24 +6,25 @@ const BlogDetails = () => {
     const {data: blog, error, isPending} = useFetch('http://localhost:8000/blogs/' + id);
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleDelete = () => {
         fetch('http://localhost:8000/blogs/' + blog.id, {
             method: 'DELETE'
         }).then(() => {
+            // Go home after deleting
             navigate('/');
         })
     }
 
     return ( 
         <div className="blog-details">
-            { isPending && <div>Loading</div> }
+            { isPending && <div>Loading...</div> }
             { error && <div>{error}</div> }
             {blog && (
                 <article>
                 <h2>{blog.title}</h2>
                 <p>Written by {blog.author}</p><br />
                 <p>{ blog.body } </p><br />
-                <button onClick={handleClick}>delete</button>
+                <button onClick={handleDelete}>delete</button>
                 </article>
             )}
         </div>

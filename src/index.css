@@ -7,10 +7,15 @@
   --border-2: #c1e1c3;
   --text: #bdf9cbd4;
   --dark-background:#090411d4;
+  --text-input:#241045d4;
 }
 
 body {
   background-color: var(--dark-background);
+}
+
+input, textarea, select{
+  background-color: var(--text-input);
 }
 /* base styles */
 * {

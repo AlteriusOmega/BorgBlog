@@ -5,6 +5,7 @@ const Navbar = () => {
         <nav className="navbar">
             <h1>The Borg Blog</h1>
             <div>
+                {/* Link replaces <a> anchor tags, href is replaced with to */}
                 <Link to="/">Home</Link>
                 <Link to="/create" style={{
                     color: "var(--text)",

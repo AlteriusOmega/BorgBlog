@@ -12,7 +12,7 @@ const Home = () => {
             {isPending && <div>Loading...</div> }
             {/* Below, blogs prop (property) is being passed into the BlogList component. You define the props like you would define normal HTML tag properties like class or id. 
             Also using logical and && to make it so we don't try to use blogs before it's loaded*/}
-            {blogs && <BlogList blogs={blogs} title="All blogs"></BlogList>}
+            {blogs && <BlogList blogs={blogs} title="Assimilated Blogs"></BlogList>}
             {/* <BlogList blogs={blogs.filter((blog) => blog.author==="mario")} title="Mario's blogs" handleDelete = {handleDelete}></BlogList> */}
         </div>
      );

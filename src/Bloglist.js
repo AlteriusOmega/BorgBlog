@@ -12,6 +12,7 @@ const BlogList = ( props) => {
             <h2>{title}</h2>
             {blogs.map( (blog) => (
                 <div className="blog-preview" key={blog.id}>
+                    {/* We are dynamically injecting the id from blog to build url for Link using template string*/}
                     <Link to={`/blogs/${blog.id}`}>
                     <h2>{ blog.title }</h2>
                     <p>Written by {blog.author}</p><br />

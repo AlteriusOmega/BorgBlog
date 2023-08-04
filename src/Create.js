@@ -9,6 +9,7 @@ const Create = () => {
     const navigate = useNavigate(); // This object represents history but in newer React Router Dom v6 useNavigate replaces useHistory
 
     const handleSubmit = (e) => {
+        // Prevent the default action which is submit causing page to reload
         e.preventDefault();
         const blog = {title, body, author};
 
@@ -52,6 +53,11 @@ const Create = () => {
                 >
                     <option value="picard">Picard</option>
                     <option value="riker">Riker</option>
+                    <option value="spock">Spock</option>
+                    <option value="scotty">Scotty</option>
+                    <option value="crusher">Crusher</option>
+                    <option value="data">Data</option>
+                    <option value="geordi">Geordi</option>
                 </select>
                 {!isPending && <button>Add blog!</button>}
                 {isPending && <button disabled>Adding new blog...</button>}
