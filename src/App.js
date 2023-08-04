@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
@@ -18,21 +18,13 @@ function App() {
       <div className="content">
           {/* Switch component makes sure that only one route shows that only one time */}
           {/* TODO update Switch to Routes component as of React Router v6  */}
-          <Switch>
-            {/* exact is needed because just / would also match all the other */}
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/blogs/:id" element={<BlogDetails/>}>
-            <BlogDetails />
-          </Route>
-          <Route path="*"> 
-            <NotFound/>
-          </Route>
-        </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+
       </div>
     </div>
     </Router>

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import {useHistory} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('picard');
     const [isPending, setIsPending] = useState(false);
-    const history = useHistory(); // This object represents history
+    const navigate = useNavigate(); // This object represents history but in newer React Router Dom v6 useNavigate replaces useHistory
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ const Create = () => {
             console.log("New blog added")
             setIsPending(false);
             // history.go(-1);
-            history.push('/') // Use history object to go to home page
+            navigate('/') // Use navigate to go to home page
         })
 
     }
